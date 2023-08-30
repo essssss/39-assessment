@@ -1,4 +1,4 @@
-const timeWord = function (time) {
+function timeWord(time) {
     if (time === "00:00") {
         console.log("midnight");
         return "midnight";
@@ -51,8 +51,9 @@ const timeWord = function (time) {
         ? (hourWord = hoursArray[+hours - 12])
         : (hourWord = hoursArray[+hours]);
 
-    if (+minutes > 10 && +minutes < 20) {
+    if (+minutes >= 10 && +minutes < 20) {
         const minutesObj = {
+            10: "ten",
             11: "eleven",
             12: "twelve",
             13: "thirteen",
@@ -79,5 +80,7 @@ const timeWord = function (time) {
     let finalWord = `${hourWord} ${minutesWord} ${suffix}`;
     console.log(finalWord);
     return finalWord;
-};
+}
 timeWord("14:02");
+
+module.exports = timeWord;
