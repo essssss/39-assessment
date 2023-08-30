@@ -5,7 +5,7 @@ const timeWord = function (time) {
     }
     if (time === "12:00") {
         console.log("noon");
-        return;
+        return "noon";
     }
     let hourWord;
     let minutesWord;
@@ -76,7 +76,8 @@ const timeWord = function (time) {
 
     let suffix;
     +hours >= 12 ? (suffix = "pm") : (suffix = "am");
-    console.log(hourWord + " " + minutesWord + " " + suffix);
+    let finalWord = `${hourWord} ${minutesWord} ${suffix}`;
+    console.log(finalWord);
+    return finalWord;
 };
-
-timeWord("14:32");
+timeWord("14:02");
